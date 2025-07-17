@@ -20,7 +20,7 @@ Models are evaluated using accuracy and ROC curves.
 ##  Data
 
 - **Source**: [Food11 Dataset on Kaggle](https://www.kaggle.com/datasets/trolukovich/food11-image-dataset)
-- **Classes Used**: `Dairy`, `Dessert`, `Meat`, `Soup`
+- **Classes Used**: `Dairy`, `Sugar`, `Protein`, `Mixed`
 - **Format**: Images in class-specific folders
 - **Split**: 80% Training, 20% Validation
 
