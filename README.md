@@ -2,7 +2,7 @@
 
 # Food Image Classification with Transfer Learning
 
-* **One Sentence Summary**: This project uses transfer learning on a subset of the [Food11 dataset](https://www.kaggle.com/datasets/trolukovich/food11-image-dataset) to classify food images into 5 categories using various deep learning models.
+This project uses transfer learning on a subset of the [Food11 dataset](https://www.kaggle.com/datasets/trolukovich/food11-image-dataset) to classify food images into 5 categories using various deep learning models.
 
 ---
 
@@ -26,7 +26,7 @@ Models are evaluated using accuracy and ROC curves.
 
 ---
 
-## 🔧 Preprocessing
+## Preprocessing
 
 - Selected 5 classes from the original dataset
 - Trimmed each class to ≤100 images
@@ -103,7 +103,7 @@ Models are evaluated using accuracy and ROC curves.
 
 ---
 
-## ⚙️ Requirements
+##  Requirements
 
 ```bash
 pip install tensorflow numpy matplotlib scikit-learn
