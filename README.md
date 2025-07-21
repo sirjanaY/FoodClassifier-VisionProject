@@ -45,6 +45,8 @@ Models are evaluated using accuracy and ROC curves.
 ### 2. Baseline + Augmentation
 - Added: Random Flip, Rotation, Zoom
 - ~98% ROC AUC
+![img2](img2.png)
+
 
 ### 3. ResNet50 (Transfer Learning)
 - Pretrained ResNet50 backbone
@@ -54,7 +56,7 @@ Models are evaluated using accuracy and ROC curves.
 
 ##  Training & Evaluation
 
-- **Epochs**: 8
+- **Epochs**: 20
 - **Batch Size**: 16
 - **Optimizer**: Adam (LR: 3e-4)
 - **Loss**: Categorical Crossentropy
@@ -100,6 +102,7 @@ Models are evaluated using accuracy and ROC curves.
 | `Train-ResNet.ipynb`      | Transfer learning using ResNet50               |
 | `CompareAugmentation.ipynb` | ROC curve: baseline vs augmented             |
 | `CompareModels.ipynb`     | Compare all models with ROC curves             |
+| `TestModel.ipynb`         |  Visualizing the best model on test            | 
 
 ---
 
