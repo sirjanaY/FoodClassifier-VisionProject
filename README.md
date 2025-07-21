@@ -2,7 +2,7 @@
 
 # Food Image Classification with Transfer Learning
 
-This project uses transfer learning on a subset of the [Food11 dataset](https://www.kaggle.com/datasets/trolukovich/food11-image-dataset) to classify food images into 5 categories using various deep learning models.
+This project uses transfer learning on a subset of the [Food11 dataset](https://www.kaggle.com/datasets/trolukovich/food11-image-dataset) to classify food images into 5 categories using various deep learning models. Our best Transfer Learning model was the Augmented one with 98% ROC curve
 
 ---
 
@@ -40,15 +40,15 @@ Models are evaluated using accuracy and ROC curves.
 
 ### 1. Baseline CNN
 - Simple convolutional layers with BatchNorm and MaxPooling
-- ~88% ROC AUC
+- ~98% ROC AUC
 
 ### 2. Baseline + Augmentation
 - Added: Random Flip, Rotation, Zoom
-- ~91% ROC AUC
+- ~98% ROC AUC
 
 ### 3. ResNet50 (Transfer Learning)
 - Pretrained ResNet50 backbone
-- ~94% ROC AUC
+- ~70% ROC AUC
 
 ---
 
@@ -69,10 +69,10 @@ Models are evaluated using accuracy and ROC curves.
 ##  Performance Summary
 
 | Model              | Avg. ROC-AUC | Notes                          |
-|-------------------|--------------|--------------------------------|
-| Baseline CNN       | ~0.88        | Basic convolutional model      |
-| Augmented Model    | ~0.91        | Better generalization          |
-| ResNet50 Transfer  | ~0.94        | Best accuracy with fewer epochs|
+|------------------- |--------------|--------------------------------|
+| Baseline CNN       | ~0.98        | Basic convolutional model      |
+| Augmented Model    | ~0.98        | Best generalization            |
+| ResNet50 Transfer  | ~0.70        | Not the best accuracy          |
 
 ---
 
