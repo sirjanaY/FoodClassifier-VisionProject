@@ -75,7 +75,7 @@ Models are evaluated using accuracy and ROC curves.
 | ResNet50 Transfer  | ~0.70        | Not the best accuracy          |
 
 ---
-
+![img1](img1.png)
 ## Reproduce This Project
 
 1. Download and extract [Food11](https://www.kaggle.com/datasets/trolukovich/food11-image-dataset)
