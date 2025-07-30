@@ -8,7 +8,7 @@ This project uses transfer learning on a subset of the [Food11 dataset](https://
 
 ##  Overview
 
-We aim to classify food images using pre-trained models through transfer learning. Starting from a large dataset (Food11), we selected 5 food classes and reduced each to under 100 images for quick experimentation. We compared:
+The aim is to classify food images using pre-trained models through transfer learning. Starting from a large dataset (Food11), I selected 5 food classes and reduced each to under 100 images for quick experimentation. I compared:
 - A custom CNN baseline
 - The same model with data augmentation
 - A ResNet50 transfer learning model
