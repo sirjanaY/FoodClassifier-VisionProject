@@ -1,3 +1,5 @@
+![](UTA-DataScience-Logo.png)
+
 # Food Image Classification with Transfer Learning
 
 This project applies deep learning to classify food images into four categories using a subset of the [Food11 dataset](https://www.kaggle.com/datasets/trolukovich/food11-image-dataset). I evaluated a baseline CNN, its augmented version, and a ResNet50 transfer learning model to compare performance in a resource-constrained scenario. The best model achieved an average ROC-AUC of ~0.98.
@@ -31,8 +33,8 @@ Food image classification is a practical use case in applications like calorie t
 ##  Data
 
 - **Dataset:** [Food11 Kaggle Dataset](https://www.kaggle.com/datasets/trolukovich/food11-image-dataset)
-- **Selected Classes:** `Dairy`, `Sugar`, `Protein`, `Mixed`
-- **Subset Size:** ≤100 images per class
+- **Selected Classes:** `Dairy`, `Dessert`, `Meat`, `Soup`
+- **Subset Size:** 115 images per class
 - **Format:** JPEG files in class-specific folders
 - **Split:** 80% training / 20% validation
 
