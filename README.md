@@ -132,7 +132,7 @@ Each model's training/validation curves and ROC plots are included in evaluation
 | `TestModel.ipynb`                | Visualize predictions on test samples  |
 
 ## TestModel:
-![image3](image3.png)
+![img3](img3.png)
 
 ---
 
