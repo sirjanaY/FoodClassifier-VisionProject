@@ -46,6 +46,7 @@ Food image classification is a practical use case in applications like calorie t
 - Normalized pixel values (rescale to [0, 1])
 - One-hot encoded class labels
 - Visual inspection to verify dataset integrity
+  
 ![img4](img4.png)
 
 ---
