@@ -33,7 +33,7 @@ Food image classification is a practical use case in applications like calorie t
 ##  Data
 
 - **Dataset:** [Food11 Kaggle Dataset](https://www.kaggle.com/datasets/trolukovich/food11-image-dataset)
-- **Selected Classes:** `Dairy`, `Dessert`, `Meat`, `Soup`
+- **Selected Classes:** `Dairy`, `Dessert`, `Meat`, `Soup`, which I changed to -->'Dairy', 'Sugar', 'Protein', 'Mixed'
 - **Subset Size:** 115 images per class
 - **Format:** JPEG files in class-specific folders
 - **Split:** 80% training / 20% validation
