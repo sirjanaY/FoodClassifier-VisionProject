@@ -58,8 +58,8 @@ Food image classification is a practical use case in applications like calorie t
 - Added: random flip, zoom, rotation  
 - Slightly better generalization than baseline  
 - Achieved ~0.98 ROC-AUC  
-> **Add image here (augmentation performance comparison)**  
-> `![Augmentation vs Baseline](img2.png)`
+![img2](img2.png)
+
 
 ### 3. ResNet50 (Transfer Learning)  
 - Pretrained on ImageNet  
@@ -78,7 +78,6 @@ Food image classification is a practical use case in applications like calorie t
 - **Metrics:** Accuracy, ROC-AUC
 
 Each model's training/validation curves and ROC plots are included in evaluation notebooks.
-![img2](img2.png)
 ---
 
 ##  Performance Summary
@@ -129,6 +128,9 @@ Each model's training/validation curves and ROC plots are included in evaluation
 | `CompareAugmentation.ipynb`      | Compare baseline vs augmented ROC-AUC  |
 | `CompareModels.ipynb`            | Evaluate and compare all models        |
 | `TestModel.ipynb`                | Visualize predictions on test samples  |
+
+## TestModel:
+![image3](image3.png)
 
 ---
 
