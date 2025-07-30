@@ -78,7 +78,7 @@ Food image classification is a practical use case in applications like calorie t
 - **Metrics:** Accuracy, ROC-AUC
 
 Each model's training/validation curves and ROC plots are included in evaluation notebooks.
-
+![img2](img2.png)
 ---
 
 ##  Performance Summary
@@ -89,8 +89,7 @@ Each model's training/validation curves and ROC plots are included in evaluation
 | Augmented CNN      | ~0.98        | Best overall generalization  |
 | ResNet50 Transfer  | ~0.70        | Underperformed on small data |
 
-> **Add image here (ROC curves comparison)**  
-> `![ROC Curve Comparison](img1.png)`
+![img1](img1.png)
 
 ---
 
@@ -103,7 +102,7 @@ Each model's training/validation curves and ROC plots are included in evaluation
 
 ---
 
-## 🔮 Future Work
+##  Future Work
 
 - **Expand Dataset:** Use all 11 classes with >1000 images/class  
 - **Try Other Architectures:** MobileNetV2, EfficientNet, or ViT  
