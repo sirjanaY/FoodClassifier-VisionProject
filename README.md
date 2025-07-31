@@ -153,8 +153,8 @@ Accuracy gave a straightforward measure of overall correctness, while ROC-AUC of
 
 
  `DataLoader.ipynb`                Load, preprocess, normalize, label encode   
- `TrainBaseModel.ipynb`            Train CNN from scratch                      
- `TrainBaseModelAugmentation.ipynb`  Add augmentation and retrain              
+ `TrainBaseModel.ipynb`            Train MobilNetV2                   
+ `TrainBaseModelAugmentation.ipynb`  Add augmentation and retrain MobilNetV2               
  `Train-ResNet.ipynb`             Transfer learning with ResNet50             
  `CompareAugmentation.ipynb`      ROC-AUC plots for baseline vs augmented    
 `CompareModels.ipynb`             Final evaluation + model comparison table   
