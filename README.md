@@ -21,23 +21,10 @@ By restricting the dataset to **4 classes** and ~115 images/class, the focus was
 
 ##  Why This Project Matters
 
-- Food image classification has real-world relevance in **fitness tracking, calorie estimation, and health tech**.
-- It helps demonstrate **how far we can push performance using minimal data** and well-chosen architectures.
-- The project allowed me to **practice modular deep learning pipeline construction**, experiment with **data augmentation**, and **apply transfer learning** to evaluate generalization.
+Food image classification is a valuable real-world application with relevance in areas like fitness tracking, calorie estimation, and personalized health tech. This project explores how deep learning models can be effectively applied even in low-data environments, where collecting large labeled datasets may not be feasible. By carefully selecting architectures and applying strategies like data augmentation and transfer learning, I was able to achieve strong performance while keeping the pipeline lightweight and efficient. Beyond the technical results, this project also served as a hands-on opportunity to build a modular, reusable deep learning workflow and deepen my understanding of how different modeling choices affect generalization.
 
 ---
-
-##  Tech Stack
-
-| Tool            | Why It's Used                                                   |
-|-----------------|------------------------------------------------------------------|
-| **Python**      | Versatile language for data science                             |
-| **TensorFlow**  | Industry-standard for building and training deep learning models |
-| **NumPy**       | Efficient numerical operations and array manipulation            |
-| **Matplotlib**  | Visualization of training metrics, image samples, and ROC curves|
-| **scikit-learn**| ROC-AUC scoring and data splitting tools                         |
-
----
+![img4](img4.png)
 
 ##  Dataset Summary
 
@@ -55,15 +42,12 @@ I chose these classes for **distinct visual characteristics** to help models lea
 
 ##  Preprocessing Strategy
 
-| Step                       | Reasoning                                                                 |
-|----------------------------|---------------------------------------------------------------------------|
-| Selected 4 classes         | Reduce complexity & speed up experimentation                              |
-| ≤115 images/class          | Simulate a low-data environment                                           |
-| Normalized pixel values    | Ensures faster convergence and prevents gradient explosion                |
-| One-hot encoding labels    | Required for multi-class classification using `categorical_crossentropy` |
-| Visual inspection          | Verifies data cleanliness and confirms accurate labeling                  |
 
-![img4](img4.png)
+*To streamline the task and reduce training time, I selected four visually distinct food categories from the original Food11 dataset. I limited each class to a maximum of 115 images to simulate a realistic low-data scenario, which is common in many practical applications.
+
+*The images were rescaled from 0–255 to 0–1 to normalize pixel values, which helps stabilize training and ensures faster convergence. I also one-hot encoded the labels to prepare them for multi-class classification using the categorical_crossentropy loss function.
+
+*Finally, I manually inspected the images to confirm correct labeling and remove any visually misleading or corrupted samples. These steps helped ensure that the models were trained on clean, balanced, and well-prepared data.
 
 ---
 
@@ -156,6 +140,8 @@ To evaluate if pre-learned "universal image features" (like textures, edges, sha
 
 ---
 
+![img3](img3.png)
+
 ## Reproducibility Steps
 
 ### 1. Download & Prepare Data
@@ -175,8 +161,7 @@ To evaluate if pre-learned "universal image features" (like textures, edges, sha
 | `CompareModels.ipynb`            | Final evaluation + model comparison table   |
 | `TestModel.ipynb`                | View predictions on test samples            |
 
- *Example output:*  
-![img3](img3.png)
+
 
 ---
 
