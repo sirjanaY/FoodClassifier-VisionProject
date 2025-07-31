@@ -66,10 +66,11 @@ I chose these classes for **distinct visual characteristics** to help models lea
 - Pretrained **MobileNetV2** used as a frozen feature extractor.
 - Built a classification head: `GlobalAveragePooling2D → Dropout → Dense(softmax)`.
 - No data augmentation applied.
+  
 **Training:**
 - 320 training and 80 validation images (80/20 split).
 - Trained for 20 epochs using categorical crossentropy.
-
+  
 **Results:**
 - **Training Accuracy:** 100%
 - **Validation Accuracy:** **90.0%**
