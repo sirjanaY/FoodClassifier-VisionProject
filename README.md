@@ -59,22 +59,19 @@ I chose these classes for **distinct visual characteristics** to help models lea
 - Chosen for speed and simplicity
 - Good for learning core image features from scratch
 
-**Why?**  
-To establish a baseline and understand how well a small CNN can perform without additional data handling. This also helps benchmark improvements from augmentation or transfer learning.
-
-→ **ROC-AUC: ~0.98**
+**Why?** To establish a baseline and understand how well a small CNN can perform without additional data handling. This also helps benchmark improvements from augmentation or transfer learning.
+ **ROC-AUC: ~0.98**
 
 ---
 
-### 2. ** Data Augmentation**
+### 2. **Data Augmentation**
 
 - Augmented input images using real-time transformations:
   - Horizontal flip
   - Random zoom
   - Random rotation
-**Why?**  
-To improve generalization and reduce overfitting. Augmentation forces the model to learn **invariant features** and prevents it from memorizing small datasets.
-→ **ROC-AUC: ~0.98** (slightly better generalization)
+**Why?** To improve generalization and reduce overfitting. Augmentation forces the model to learn **invariant features** and prevents it from memorizing small datasets.
+**ROC-AUC: ~0.98** (slightly better generalization)
 
 ![img2](img2.png)
 
@@ -85,11 +82,9 @@ To improve generalization and reduce overfitting. Augmentation forces the model 
 - Used pretrained ResNet50 from ImageNet
 - Only trained the final classification head
 
-**Why?**  
-To evaluate if pre-learned "universal image features" (like textures, edges, shapes) can help classify food images with limited labeled data. This approach often outperforms training from scratch on small datasets.
+**Why?**  To evaluate if pre-learned "universal image features" (like textures, edges, shapes) can help classify food images with limited labeled data. This approach often outperforms training from scratch on small datasets.
 
-**Result:**  
-→ ROC-AUC: ~0.70  
+**Result:** ROC-AUC: ~0.70  
 **Reason:** Underperformed due to likely overfitting and lack of tuning. Pretrained models often need **careful fine-tuning** or **more data** to adapt well.
 
 ---
