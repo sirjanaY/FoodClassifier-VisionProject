@@ -112,9 +112,9 @@ Accuracy gave a straightforward measure of overall correctness, while ROC-AUC of
 
 | Model                 | ROC-AUC      | Insights                                |
 |-----------------------|--------------|------------------------------------------|
-| Baseline CNN          | ~0.98        | Strong baseline; learns features well    |
-| Augmented CNN         | ~0.98        | More robust to overfitting               |
-| ResNet50 Transfer     | ~0.70        | Underfit; highlights tuning importance   |
+| Baseline MobilNetV2           | ~0.98        | Strong baseline; learns features well    |
+| Augmented MobilNetV2          | ~0.98        | More robust to overfitting               |
+| ResNet50      | ~0.70        | Underfit; highlights tuning importance   |
 
 ![img1](img1.png)
 
