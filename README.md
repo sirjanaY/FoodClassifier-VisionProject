@@ -24,7 +24,6 @@ By restricting the dataset to **4 classes** and ~115 images/class, the focus was
 Food image classification is a valuable real-world application with relevance in areas like fitness tracking, calorie estimation, and personalized health tech. This project explores how deep learning models can be effectively applied even in low-data environments, where collecting large labeled datasets may not be feasible. By carefully selecting architectures and applying strategies like data augmentation and transfer learning, I was able to achieve strong performance while keeping the pipeline lightweight and efficient. Beyond the technical results, this project also served as a hands-on opportunity to build a modular, reusable deep learning workflow and deepen my understanding of how different modeling choices affect generalization.
 
 ---
-![imgF](imgF.png)
 
 ##  Dataset Summary
 
@@ -37,6 +36,8 @@ Food image classification is a valuable real-world application with relevance in
   - `Soup` → Renamed to `Mixed`
 
 I chose these classes for **distinct visual characteristics** to help models learn clearly separable features. Limiting each class to ~115 images mimics real-world constraints (e.g., few labeled samples in medical imaging or food tracking apps).
+
+![imgF](imgF.png)
 
 ---
 
