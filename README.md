@@ -163,7 +163,7 @@ Accuracy gave a straightforward measure of overall correctness, while ROC-AUC of
  `Train-ResNet.ipynb`             Transfer learning with ResNet50             
  `CompareAugmentation.ipynb`      ROC-AUC plots for baseline vs augmented    
 `CompareModels.ipynb`             Final evaluation + model comparison table   
-`TestModel.ipynb`                 View predictions on test samples            
+`TestModel2.ipynb`                 View predictions on test samples            
 
 
 
