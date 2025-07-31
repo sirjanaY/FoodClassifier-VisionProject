@@ -98,9 +98,9 @@ I chose these classes for **distinct visual characteristics** to help models lea
 
 ---
 
-### 3. **ResNet50 (Feature Extractor Only)**
+### 3. **ResNet50 **
 
-**Approach:**
+**Approach:(Removed Fine-tuning)**
 - Used **ResNet50** pretrained on ImageNet with all layers frozen.
 - Applied `resnet50.preprocess_input()` before passing inputs to the model.
 - Used the same classification head as other models.
