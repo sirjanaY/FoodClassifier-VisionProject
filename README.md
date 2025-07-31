@@ -24,7 +24,7 @@ By restricting the dataset to **4 classes** and ~115 images/class, the focus was
 Food image classification is a valuable real-world application with relevance in areas like fitness tracking, calorie estimation, and personalized health tech. This project explores how deep learning models can be effectively applied even in low-data environments, where collecting large labeled datasets may not be feasible. By carefully selecting architectures and applying strategies like data augmentation and transfer learning, I was able to achieve strong performance while keeping the pipeline lightweight and efficient. Beyond the technical results, this project also served as a hands-on opportunity to build a modular, reusable deep learning workflow and deepen my understanding of how different modeling choices affect generalization.
 
 ---
-![img4](img4.png)
+![imgF](imgF.png)
 
 ##  Dataset Summary
 
@@ -115,13 +115,6 @@ I chose these classes for **distinct visual characteristics** to help models lea
 | **Augmented**     | 97.7%     | 87.5%   | Better generalization, improved robustness   |
 | **ResNet50**      | 83.4%     | 88.8%   | Slower training, stronger late-stage results |
 
-
-## 📊 ROC Curve Comparison
-
-The following ROC curve visualizes and compares the classification performance of three transfer learning models using **macro-averaged AUC scores** across four food image classes:
-
-![ROC Curve](Screenshot%202025-07-31%20012044.png)
-
 ### Insights:
 
  **Baseline Model (MobileNetV2, no augmentation)** achieved an **AUC of 0.99**, showing strong performance despite its simplicity. It captures the universal features well but may overfit on small datasets.
@@ -132,8 +125,9 @@ The following ROC curve visualizes and compares the classification performance o
 
 All three models performed competitively, with the **Baseline and ResNet50 models leading in AUC**. The Augmented model, though slightly behind in score, provides better robustness and reduced overfitting — ideal for deployment.
 
-![img5](img5.png)
+The following ROC curve visualizes and compares the classification performance of three transfer learning models using **macro-averaged AUC scores** across four food image classes:
 
+![img5](img5.png)
 
 ---
 
