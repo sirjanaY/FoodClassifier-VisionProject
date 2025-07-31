@@ -43,10 +43,15 @@ I chose these classes for **distinct visual characteristics** to help models lea
 
 ##  Preprocessing Strategy
 
+-To streamline training and simulate a practical low-data scenario, I selected **four visually distinct food categories** from the original Food11 dataset. Each class was capped at **a maximum of 115 images**, reflecting common constraints in real-world applications such as tasks with limited labeled data.
 
-*To streamline the task and reduce training time, I selected four visually distinct food categories from the original Food11 dataset. I limited each class to a maximum of 115 images to simulate a realistic low-data scenario, which is common in many practical applications.
+-Images were **rescaled from [0, 255] to [0, 1]** using normalization, which helped stabilize training by ensuring consistent input distributions and accelerating convergence. Labels were **one-hot encoded**, making them compatible with the **categorical crossentropy** loss function used for multi-class classification.
 
-*The images were rescaled from 0–255 to 0–1 to normalize pixel values, which helps stabilize training and ensures faster convergence. I also one-hot encoded the labels to prepare them for multi-class classification using the categorical_crossentropy loss function.
+**This preprocessing setup ensured:** 
+- Uniformity in image input format  
+- Efficient memory and training use  
+- Proper label encoding for probabilistic output
+
 
 ![img4](img4.png)
 
