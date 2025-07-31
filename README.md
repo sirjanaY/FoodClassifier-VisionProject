@@ -66,7 +66,7 @@ To establish a baseline and understand how well a small CNN can perform without 
 
 ---
 
-### 2. **CNN with Data Augmentation**
+### 2. ** Data Augmentation**
 
 - Augmented input images using real-time transformations:
   - Horizontal flip
