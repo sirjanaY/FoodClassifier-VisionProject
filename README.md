@@ -98,7 +98,7 @@ I chose these classes for **distinct visual characteristics** to help models lea
 
 ---
 
-### 3. **ResNet50 **
+### 3. **ResNet50**
 
 **Approach:(Removed Fine-tuning)**
 - Used **ResNet50** pretrained on ImageNet with all layers frozen.
