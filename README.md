@@ -2,7 +2,7 @@
 
 #  Food Image Classification with Transfer Learning
 
-This project implements a complete image classification pipeline to categorize food images using deep learning techniques. I compare three different modeling approaches under constrained data conditions to understand how techniques like augmentation and transfer learning affect model performance when data is limited. The best-performing model achieved an **ROC-AUC of ~0.98**, demonstrating that efficient techniques can deliver strong results without large datasets.
+This project implements a complete image classification pipeline to categorize food images using deep learning techniques. I compare three different modeling approaches under constrained data conditions to understand how techniques like augmentation and transfer learning affect model performance when data is limited. The best-performing model achieved an **ROC-AUC of ~0.99** which was the ResNet model, demonstrating that efficient techniques can deliver strong results without large datasets.
 
 ---
 
@@ -51,47 +51,107 @@ I chose these classes for **distinct visual characteristics** to help models lea
 
 ---
 
-##  Models Trained and Rationale
+### 1. **Baseline Model (MobileNetV2, No Fine-Tuning)**
 
-### 1. **Baseline CNN (MobileNetV2-inspired)**
+**Approach:**
+- Pretrained **MobileNetV2** used as a frozen feature extractor.
+- Built a classification head: `GlobalAveragePooling2D → Dropout → Dense(softmax)`.
+- No data augmentation applied.
+**Training:**
+- 320 training and 80 validation images (80/20 split).
+- Trained for 20 epochs using categorical crossentropy.
 
-- Built a simple Conv2D network with MaxPooling, Dropout, and BatchNorm layers
-- Chosen for speed and simplicity
-- Good for learning core image features from scratch
+**Results:**
+- **Training Accuracy:** 100%
+- **Validation Accuracy:** **90.0%**
 
-**Why?** To establish a baseline and understand how well a small CNN can perform without additional data handling. This also helps benchmark improvements from augmentation or transfer learning.
- **ROC-AUC: ~0.98**
-
----
-
-### 2. **Data Augmentation**
-
-- Augmented input images using real-time transformations:
-  - Horizontal flip
-  - Random zoom
-  - Random rotation
-**Why?** To improve generalization and reduce overfitting. Augmentation forces the model to learn **invariant features** and prevents it from memorizing small datasets.
-**ROC-AUC: ~0.98** (slightly better generalization)
-
-![img2](img2.png)
+**Takeaway:** Fast convergence but some overfitting. Excellent baseline performance with minimal configuration.
+![img22](img22.png)
 
 ---
 
-### 3. **ResNet50 (Transfer Learning)**
+### 2. **Augmented Model (MobileNetV2 + Data Augmentation)**
 
-- Used pretrained ResNet50 from ImageNet
-- Only trained the final classification head
+**Approach:**
+- Same MobileNetV2 architecture as the baseline.
+- Added a data augmentation layer (`RandomFlip`, `RandomRotation`, `RandomZoom`) before the model input.
 
-**Why?**  To evaluate if pre-learned "universal image features" (like textures, edges, shapes) can help classify food images with limited labeled data. This approach often outperforms training from scratch on small datasets.
+**Training:**
+- Same dataset and epochs as baseline.
 
-**Result:** ROC-AUC: ~0.70  
-**Reason:** Underperformed due to likely overfitting and lack of tuning. Pretrained models often need **careful fine-tuning** or **more data** to adapt well.
+**Results:**
+- **Training Accuracy:** 97.7%
+- **Validation Accuracy:** **87.5%**
+![img33](img33.png)
+
+**Takeaway:** Slight drop in accuracy, but significantly better generalization and reduced overfitting. Great for deployment scenarios.
 
 ---
+
+### 3. **ResNet50 (Feature Extractor Only)**
+
+**Approach:**
+- Used **ResNet50** pretrained on ImageNet with all layers frozen.
+- Applied `resnet50.preprocess_input()` before passing inputs to the model.
+- Used the same classification head as other models.
+
+**Training:**
+- Same dataset and 20-epoch training strategy.
+
+**Results:**
+- **Training Accuracy:** 83.4%
+- **Validation Accuracy:** **88.8%**
+![img44](img44.png)
+
+**Takeaway:** More stable learning and higher generalization. Performance improved steadily over epochs despite being slower to converge.
+
+---
+
+## Final Model Comparison
+
+| Model             | Train Acc | Val Acc | Notes                                        |
+|------------------|-----------|---------|----------------------------------------------|
+| **Baseline**      | 100%      | 90.0%   | High overfitting, fast convergence           |
+| **Augmented**     | 97.7%     | 87.5%   | Better generalization, improved robustness   |
+| **ResNet50**      | 83.4%     | 88.8%   | Slower training, stronger late-stage results |
+
+
+## 📊 ROC Curve Comparison
+
+The following ROC curve visualizes and compares the classification performance of three transfer learning models using **macro-averaged AUC scores** across four food image classes:
+
+![ROC Curve](Screenshot%202025-07-31%20012044.png)
+
+### Insights:
+
+ **Baseline Model (MobileNetV2, no augmentation)** achieved an **AUC of 0.99**, showing strong performance despite its simplicity. It captures the universal features well but may overfit on small datasets.
+  
+ **Augmented Model** introduced random image transformations to simulate data variability. While its **AUC dropped slightly to 0.97**, this model is expected to generalize better in real-world scenarios.
+
+**ResNet50 Model** also reached an **AUC of 0.99**, indicating excellent discrimination power. However, its slower convergence suggests that fine-tuning or more data might be needed for best results.
+
+All three models performed competitively, with the **Baseline and ResNet50 models leading in AUC**. The Augmented model, though slightly behind in score, provides better robustness and reduced overfitting — ideal for deployment.
+
+![img5](img5.png)
+
+
+---
+
+### Summary
+
+This work demonstrates three different transfer learning approaches:
+- **Baseline**: Evaluates pure pretrained feature extraction without regularization.
+- **Augmented**: Adds synthetic variety to training for better generalization.
+- **ResNet50**: Leverages a deeper architecture to extract rich features and improve long-term performance.
+
+Each model provides insight into how architecture, augmentation, and training strategies impact performance in low-data scenarios.
+
+
+![img3](img3.png)
 
 ## Training Configuration
 
-**Set the number of epochs to 20**: 
+**Set the number of epochs from 8 to 20**: 
 Training for 20 epochs provided a good balance between giving the model enough time to learn and avoiding overfitting. Since the dataset was small, longer training could have led to memorization rather than generalization.
 
 **Use a batch size of 16** :
@@ -108,18 +168,6 @@ Accuracy gave a straightforward measure of overall correctness, while ROC-AUC of
 
 ---
 
-##  Results Summary
-
-| Model                 | ROC-AUC      | Insights                                |
-|-----------------------|--------------|------------------------------------------|
-| Baseline MobilNetV2           | ~0.98        | Strong baseline; learns features well    |
-| Augmented MobilNetV2          | ~0.98        | More robust to overfitting               |
-| ResNet50      | ~0.70        | Underfit; highlights tuning importance   |
-
-![img1](img1.png)
-
----
-
 ##  Key Observations
 
 - **Data augmentation** slightly improved generalization without changing the architecture  
@@ -128,7 +176,6 @@ Accuracy gave a straightforward measure of overall correctness, while ROC-AUC of
 - The pipeline structure makes it easy to test other architectures or configurations
 
 ---
-![img3](img3.png)
 
 ##  Future Extensions
 
@@ -159,8 +206,6 @@ Accuracy gave a straightforward measure of overall correctness, while ROC-AUC of
  `CompareAugmentation.ipynb`      ROC-AUC plots for baseline vs augmented    
 `CompareModels.ipynb`             Final evaluation + model comparison table   
 `TestModel2.ipynb`                 View predictions on test samples            
-
-
 
 ---
 
