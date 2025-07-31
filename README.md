@@ -128,6 +128,7 @@ To evaluate if pre-learned "universal image features" (like textures, edges, sha
 - The pipeline structure makes it easy to test other architectures or configurations
 
 ---
+![img3](img3.png)
 
 ##  Future Extensions
 
@@ -140,7 +141,6 @@ To evaluate if pre-learned "universal image features" (like textures, edges, sha
 
 ---
 
-![img3](img3.png)
 
 ## Reproducibility Steps
 
@@ -151,15 +151,14 @@ To evaluate if pre-learned "universal image features" (like textures, edges, sha
 
 ### 2. Run Notebooks in This Order
 
-| Notebook                          | Purpose                                     |
-|----------------------------------|---------------------------------------------|
-| `DataLoader.ipynb`               | Load, preprocess, normalize, label encode   |
-| `TrainBaseModel.ipynb`           | Train CNN from scratch                      |
-| `TrainBaseModelAugmentation.ipynb` | Add augmentation and retrain              |
-| `Train-ResNet.ipynb`             | Transfer learning with ResNet50             |
-| `CompareAugmentation.ipynb`      | ROC-AUC plots for baseline vs augmented     |
-| `CompareModels.ipynb`            | Final evaluation + model comparison table   |
-| `TestModel.ipynb`                | View predictions on test samples            |
+
+ `DataLoader.ipynb`                Load, preprocess, normalize, label encode   
+ `TrainBaseModel.ipynb`            Train CNN from scratch                      
+ `TrainBaseModelAugmentation.ipynb`  Add augmentation and retrain              
+ `Train-ResNet.ipynb`             Transfer learning with ResNet50             
+ `CompareAugmentation.ipynb`      ROC-AUC plots for baseline vs augmented    
+`CompareModels.ipynb`             Final evaluation + model comparison table   
+`TestModel.ipynb`                 View predictions on test samples            
 
 
 
