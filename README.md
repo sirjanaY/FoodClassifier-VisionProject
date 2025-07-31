@@ -79,7 +79,6 @@ To improve generalization and reduce overfitting. Augmentation forces the model 
 ![img2](img2.png)
 
 ---
-![img3](img3.png)
 
 ### 3. **ResNet50 (Transfer Learning)**
 
@@ -127,6 +126,7 @@ To evaluate if pre-learned "universal image features" (like textures, edges, sha
 - The pipeline structure makes it easy to test other architectures or configurations
 
 ---
+![img3](img3.png)
 
 ##  Future Extensions
 
