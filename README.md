@@ -96,13 +96,20 @@ To evaluate if pre-learned "universal image features" (like textures, edges, sha
 
 ## Training Configuration
 
-| Hyperparameter | Value                     | Rationale                                                  |
-|----------------|---------------------------|------------------------------------------------------------|
-| Epochs         | 20                        | Balanced speed with model convergence                      |
-| Batch Size     | 16                        | Good trade-off for memory use and gradient stability       |
-| Optimizer      | Adam (lr = 3e-4)          | Adaptive learning for stable training                      |
-| Loss           | Categorical Crossentropy  | Multi-class classification objective                       |
-| Metric         | Accuracy, ROC-AUC         | Evaluates performance holistically                         |
+***Set the number of epochs to 20**
+Training for 20 epochs provided a good balance between giving the model enough time to learn and avoiding overfitting. Since the dataset was small, longer training could have led to memorization rather than generalization.
+
+***Use a batch size of 16**
+A moderate batch size like 16 ensured stable gradient updates while being small enough to fit within CPU memory. It also helped the model generalize better than using very large or very small batch sizes.
+
+***Choose the Adam optimizer with a learning rate of 3e-4**
+Adam was selected for its adaptive learning rate capabilities, which adjust the step size for each parameter during training. This helps achieve faster and more stable convergence. The learning rate of 3e-4 was chosen to make learning efficient without overshooting the optimal weights.
+
+***Apply categorical crossentropy as the loss function**
+Since this is a multi-class classification problem with one-hot encoded labels, categorical crossentropy was the appropriate loss function. It helps the model learn probabilities for each class and penalizes incorrect predictions more strongly.
+
+***Monitor accuracy and ROC-AUC as evaluation metrics**
+Accuracy gave a straightforward measure of overall correctness, while ROC-AUC offered a deeper view into how well the model distinguished between different classes. This was especially important to assess model confidence and class separation in a low-data setting.
 
 ---
 
