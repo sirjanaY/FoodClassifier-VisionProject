@@ -72,15 +72,14 @@ To establish a baseline and understand how well a small CNN can perform without 
   - Horizontal flip
   - Random zoom
   - Random rotation
-
 **Why?**  
 To improve generalization and reduce overfitting. Augmentation forces the model to learn **invariant features** and prevents it from memorizing small datasets.
-
 → **ROC-AUC: ~0.98** (slightly better generalization)
 
 ![img2](img2.png)
 
 ---
+![img3](img3.png)
 
 ### 3. **ResNet50 (Transfer Learning)**
 
@@ -128,7 +127,6 @@ To evaluate if pre-learned "universal image features" (like textures, edges, sha
 - The pipeline structure makes it easy to test other architectures or configurations
 
 ---
-![img3](img3.png)
 
 ##  Future Extensions
 
