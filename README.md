@@ -148,29 +148,29 @@ Each model provides insight into how architecture, augmentation, and training st
 
 ## Training Configuration
 
-**Set the number of epochs from 8 to 20**: 
-Training for 20 epochs provided a good balance between giving the model enough time to learn and avoiding overfitting. Since the dataset was small, longer training could have led to memorization rather than generalization.
+**Epochs set to 20**  
+  Training for 20 epochs offered a good balance between learning and overfitting. While early epochs showed rapid improvement, later epochs helped the model refine class boundaries, especially when using transfer learning. With a small dataset, this longer schedule worked well due to early stopping tendencies of validation accuracy.
 
-**Use a batch size of 16** :
-A moderate batch size like 16 ensured stable gradient updates while being small enough to fit within CPU memory. It also helped the model generalize better than using very large or very small batch sizes.
+ **Batch size of 16**  
+  A batch size of 16 ensured smooth training without memory issues on CPU. It struck a balance between training stability and model generalization, avoiding the pitfalls of very small (noisy) or very large (sluggish) batches.
 
-**Choose the Adam optimizer with a learning rate of 3e-4**: 
-Adam was selected for its adaptive learning rate capabilities, which adjust the step size for each parameter during training. This helps achieve faster and more stable convergence. The learning rate of 3e-4 was chosen to make learning efficient without overshooting the optimal weights.
+ **Adam optimizer with learning rate of 3e-4**  
+  Adam's adaptive learning helped the model converge faster and more reliably. The learning rate of 3e-4 worked well across models, avoiding both slow convergence and instability.
 
-**Apply categorical crossentropy as the loss function**: 
-Since this is a multi-class classification problem with one-hot encoded labels, categorical crossentropy was the appropriate loss function. It helps the model learn probabilities for each class and penalizes incorrect predictions more strongly.
+ **Categorical crossentropy as the loss function**  
+  Since the task involved multi-class classification with one-hot labels, categorical crossentropy was appropriate. It penalized incorrect predictions proportionally and helped models learn class probabilities effectively.
 
-**Monitor accuracy and ROC-AUC as evaluation metrics** : 
-Accuracy gave a straightforward measure of overall correctness, while ROC-AUC offered a deeper view into how well the model distinguished between different classes. This was especially important to assess model confidence and class separation in a low-data setting.
+ **Monitored accuracy and ROC-AUC**  
+  Accuracy provided a clear measure of performance, but ROC-AUC helped capture class-wise separation and confidence, which was especially valuable given the class imbalance and small dataset size.
 
 ---
 
 ##  Key Observations
 
-- **Data augmentation** slightly improved generalization without changing the architecture  
-- **Transfer learning is not always better** — especially when the dataset is small and not similar to the pretraining domain  
-- Even simple CNNs can perform **exceptionally well with the right preprocessing**  
-- The pipeline structure makes it easy to test other architectures or configurations
+*Data augmentation significantly improved validation stability, especially when paired with transfer learning, helping the model avoid overfitting to the small dataset.
+*Transfer learning (ResNet50, MobileNetV2) showed strong performance, but required proper freezing and fine-tuning to match or outperform simpler models — confirming its value only when carefully applied.
+*A custom CNN, even without pretraining, reached high AUC but suffered in validation accuracy, suggesting that deeper models generalize better with limited yet diverse data.
+*The modular pipeline allowed rapid testing of augmentation strategies, pretrained backbones, and training settings — making iteration efficient and scalable.
 
 ---
 
