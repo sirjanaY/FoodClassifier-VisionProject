@@ -53,12 +53,12 @@ Food image classification is a practical use case in applications like calorie t
 
 ## Models Trained
 
-### 1. Baseline CNN  
+### 1. Baseline CNN - MobileNetV2
 - Standard Conv2D + MaxPooling blocks  
 - Batch normalization, dropout  
 - Achieved ~0.98 ROC-AUC
 
-### 2. CNN + Augmentation  
+### 2. MobileNetV2 Augmentation
 - Added: random flip, zoom, rotation  
 - Slightly better generalization than baseline  
 - Achieved ~0.98 ROC-AUC  
