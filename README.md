@@ -14,7 +14,7 @@ To classify food images using deep learning models and compare the performance o
 - A CNN with data augmentation
 - A transfer learning model using ResNet50
 
-I limited the dataset to ≤100 images per class and selected 4 target categories to reduce training time and facilitate faster prototyping.
+I limited the dataset to 115 images per class and selected 4 target categories to reduce training time and facilitate faster prototyping.
 
 ###  Why This Project Matters
 Food image classification is a practical use case in applications like calorie tracking, dietary recommendation systems, and AI-enhanced cooking apps. By leveraging transfer learning, this project shows how high performance can be achieved with relatively small labeled datasets.
