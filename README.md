@@ -200,7 +200,7 @@ Each model provides insight into how architecture, augmentation, and training st
 - Select 4 folders: `Dairy`, `Dessert`, `Meat`, `Soup`
 - Rename and reorganize into: `Dairy`, `Sugar`, `Protein`, `Mixed`
 
-### 2. Run Notebooks in This Order
+### 2. Run Notebooks from Folder in This Order
 
 
  `DataLoader.ipynb`                Load, preprocess, normalize, label encode   
