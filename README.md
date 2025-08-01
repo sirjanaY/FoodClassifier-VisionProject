@@ -2,11 +2,14 @@
 
 #  Food Image Classification with Transfer Learning
 
-This project implements a complete image classification pipeline to categorize food images using deep learning techniques. I compare three different modeling approaches under constrained data conditions to understand how techniques like augmentation and transfer learning affect model performance when data is limited. The best-performing model achieved an **ROC-AUC of ~0.99** which was the ResNet model, demonstrating that efficient techniques can deliver strong results without large datasets.
+## One Sentence Summary
+This repository implements and compares multiple deep learning strategies (simple CNN, augmented CNN, and ResNet50 transfer learning) to classify food images from a small dataset of 4 classes using TensorFlow and Keras.
+
 
 ---
 
 ##  Project Overview
+The task is to classify food images into one of four visually distinct categories using supervised learning. The dataset was intentionally restricted to approximately 115 images per class to simulate low-data real-world scenarios, which are common in early research or startup environments.
 
 ###  Objective
 
